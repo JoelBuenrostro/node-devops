@@ -20,15 +20,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-<<<<<<< Updated upstream
-          cache: npm
-      - run: npm ci
-      - run: npm run build --if-present
-=======
 
-      - name: Instalacion de dependencias 
+      - name: Instala las dependencias
         run: npm ci
 
       - name: Compila el proyecto
         run: npm run build --if-present
->>>>>>> Stashed changes
+
+      - name: Ejecuta los test
+        run: npm test --if-present
