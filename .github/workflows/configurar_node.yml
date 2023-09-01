@@ -25,7 +25,7 @@ jobs:
         run: cd client && npm ci
 
       - name: Compila el proyecto
-        run: npm run build --if-present
+        run: cd client && npm run build --if-present
 
       - name: Ejecuta los test
-        run: npm test --if-present
+        run: cd client && npm test --if-present
