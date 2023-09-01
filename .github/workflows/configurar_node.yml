@@ -1,0 +1,24 @@
+name: Configuracion de Nodejs simple
+
+run-name: Configuracion para React y Vite ⚡
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs: 
+  Configuracion-inicial:
+    runs-on: windows-latest
+
+    steps:
+      - name: Revision
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: npm
+      - run: npm ci
+      - run: npm run build --if-present
