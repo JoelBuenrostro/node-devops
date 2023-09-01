@@ -22,7 +22,7 @@ jobs:
           node-version: '18.x'
 
       - name: Instala las dependencias
-        run: npm ci
+        run: cd client && npm ci
 
       - name: Compila el proyecto
         run: npm run build --if-present
