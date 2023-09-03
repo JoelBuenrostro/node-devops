@@ -1,12 +1,8 @@
 name: Configuracion de Nodejs simple
 
-run-name: Configuracion para React y Vite ⚡
+run-name: Compilar React con Vite ⚡
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
 
 jobs: 
@@ -21,7 +17,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-          cache: 'npm'
 
       - name: Instala las dependencias
         run: cd client && npm ci
@@ -31,3 +26,9 @@ jobs:
 
       - name: Ejecuta los test
         run: cd client && npm test --if-present
+
+      - name: Guarda los artefactos
+        uses: actions/upload-artifact@v3
+        with:
+          name: node-app
+          path: .

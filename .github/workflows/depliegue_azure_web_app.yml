@@ -1,13 +1,9 @@
 name: Despliegue aplicacion Nodejs en Azure Web App
 
-run-name: Configuracion para React y Vite ⚡
+run-name: Configuracion y despliegue para React y Vite ⚡
 
 on:
-    push:
-      branches: [ "main" ]
-    pull_request:
-      branches: [ "main" ]
-    workflow_dispatch:
+  workflow_dispatch:
   
 env:
   AZURE_WEBAPP_NAME: nodejs-devops
